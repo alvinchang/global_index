@@ -1,2 +1,1 @@
-# global_index
-Test
+# See Email for README

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title> Global Search </title>
+    </head>
+    <div>
+        <body>
+            <h1>Welcome!</h1>
+        </body>
+        <img src= {{ url_for("static",
+        filename = 'icons/globe.png') }} width="200" height="200"/>
+    </div>
+
+    <div>
+
+        <form action="{{ url_for('rest.views.get_closest_city_names_by_proximity') }}" method="get">
+            <h2>Cities By Proximity</h2> <br>
+    City ID (int): <input type="number" name="city_id"> <br>
+    Top-K (int): <input type="number" name="top_k"> <br>
+    Country (str): <input type="text" name="country_restriction"><br>
+    <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div>
+        <form action="{{ url_for('rest.views.get_city_names_by_lexicography') }}" method="get">
+            <h2>Cities By Lexicography</h2> <br>
+    City Name Search: <input type="text" name="city_name_match_str"> <br>
+    Top-K (int): <input type="number" name="top_k"> <br>
+    Country (str): <input type="text" name="country_restriction"> <br>
+    <input type="submit" value="Submit">
+        </form>
+    </div>
+</html>
